@@ -3,6 +3,7 @@
   "private": false,
   "version": "1.0.0",
   "description": "",
+  "files": ["src/"],
   "main": "src/index.js",
   "scripts": {
     "test": "node test"
