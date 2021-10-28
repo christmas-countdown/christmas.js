@@ -43,3 +43,5 @@ module.exports.isTomorrow = timezone => {
 	const now = spacetime.now(timezone);
 	return now.isSame(christmas(timezone).subtract(1, 'days'), 'date');
 };
+
+module.exports.date = timezone => new Date(christmas(timezone).format('iso'));

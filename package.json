@@ -1,9 +1,11 @@
 {
   "name": "@eartharoid/christmas",
   "private": false,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Get the time left until Christmas",
-  "files": ["src/"],
+  "files": [
+    "src/"
+  ],
   "main": "src/index.js",
   "scripts": {
     "test": "node test"
@@ -22,6 +24,6 @@
     "spacetime": "^6.16.3"
   },
   "devDependencies": {
-    "eslint": "^8.0.1"
+    "eslint": "^8.1.0"
   }
 }
