@@ -1,29 +1,32 @@
 {
-  "name": "@eartharoid/christmas",
-  "private": false,
-  "version": "1.2.0",
-  "description": "Get the time left until Christmas",
-  "files": [
-    "src/"
-  ],
-  "main": "src/index.js",
-  "scripts": {
-    "test": "node test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/christmas-countdown/christmas.js.git"
-  },
-  "author": "eartharoid",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/christmas-countdown/christmas.js/issues"
-  },
-  "homepage": "https://github.com/christmas-countdown/christmas.js#readme",
-  "dependencies": {
-    "spacetime": "^6.16.3"
-  },
-  "devDependencies": {
-    "eslint": "^8.1.0"
-  }
+	"name": "@eartharoid/christmas",
+	"private": false,
+	"version": "1.2.0",
+	"description": "Get the time left until Christmas",
+	"files": [
+		"src/"
+	],
+	"main": "src/index.js",
+	"scripts": {
+		"docs": "jsdoc -c .jsdoc.json --verbose",
+    	"test": "node test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/christmas-countdown/christmas.js.git"
+	},
+	"author": "eartharoid",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/christmas-countdown/christmas.js/issues"
+	},
+	"homepage": "https://github.com/christmas-countdown/christmas.js#readme",
+	"dependencies": {
+		"spacetime": "^6.16.3"
+	},
+	"devDependencies": {
+		"@rdipardo/clean-jsdoc": "github:rdipardo/clean-jsdoc-theme",
+		"eslint": "^8.1.0",
+		"jsdoc": "^3.6.7"
+	}
 }

@@ -1,0 +1,34 @@
+{
+	"plugins": [
+		"plugins/markdown"
+	],
+	"markdown": {
+		"idInHeadings": true
+	},
+	"source": {
+		"include": [
+			"src",
+			"README.md"
+		],
+		"includePattern": ".+\\.js(doc|x)?$",
+		"excludePattern": "(node_modules/|docs)"
+	},
+	"sourceType": "module",
+	"tags": {
+		"allowUnknownTags": true,
+		"dictionaries": [
+			"jsdoc",
+			"closure"
+		]
+	},
+	"opts": {
+		"template": "node_modules/@rdipardo/clean-jsdoc",
+		"theme_opts": {
+			"theme": "dark"
+		},
+		"encoding": "utf8",
+		"readme": "./README.md",
+		"destination": "docs/",
+		"recurse": true
+	}
+}
