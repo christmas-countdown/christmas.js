@@ -1,0 +1,1 @@
+"use strict";(function(){var a=document.getElementsByClassName("prettyprint source linenums"),b=0,c=0,d=0,e=[],f=0,g="#";if(a&&a[0])for(g=document.location.hash.substring(1),e=a[0].getElementsByTagName("li"),f=e.length;b<f;b++)c++,d="line".concat(c),e[b].id=d,d===g&&(e[b].className+=" selected")})();
