@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@rdipardo/clean-jsdoc': github:rdipardo/clean-jsdoc-theme
@@ -10,7 +10,7 @@ dependencies:
   spacetime: 6.16.3
 
 devDependencies:
-  '@rdipardo/clean-jsdoc': github.com/rdipardo/clean-jsdoc-theme/9875e4b0e413e511d9998d07a9d3943ac499e530
+  '@rdipardo/clean-jsdoc': github.com/rdipardo/clean-jsdoc-theme/e3ac25e0f7dcd144d0f01a5ef1f272165ad5b609
   eslint: 8.1.0
   jsdoc: 3.6.7
 
@@ -296,6 +296,8 @@ packages:
     resolution: {integrity: sha512-RUVpT0G2h6rOZwqLDTrKk7ksNv7YpAilTnYe1/Q+eDjxEceRMKVWbCsX7t8h6C1qCFi/1Y8WZjcEPBAFG27GPw==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.16.0
     dev: true
 
   /@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression/7.16.2_@babel+core@7.16.0:
@@ -1161,6 +1163,13 @@ packages:
     resolution: {integrity: sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==}
     dev: true
 
+  /@jsdoc/salty/0.2.1:
+    resolution: {integrity: sha512-JXwylDNSHa549N9uceDYu8D4GMXwSo3H8CCPYEQqxhhHpxD28+lRl2b3bS/caaPj5w1YD3SWtrficJNTnUjGpg==}
+    engines: {node: '>=v12.0.0'}
+    dependencies:
+      lodash: 4.17.21
+    dev: true
+
   /acorn-jsx/5.3.2_acorn@8.5.0:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -1228,23 +1237,23 @@ packages:
     dev: true
 
   /babel-helper-flip-expressions/0.4.3:
-    resolution: {integrity: sha1-NpZzahKKwYvCUlS19AoizrPB0/0=}
+    resolution: {integrity: sha512-rSrkRW4YQ2ETCWww9gbsWk4N0x1BOtln349Tk0dlCS90oT68WMLyGR7WvaMp3eAnsVrCqdUtC19lo1avyGPejA==}
     dev: true
 
   /babel-helper-is-nodes-equiv/0.0.1:
-    resolution: {integrity: sha1-NOmzALFHnd2Y7HfqC76TQt/jloQ=}
+    resolution: {integrity: sha512-ri/nsMFVRqXn7IyT5qW4/hIAGQxuYUFHa3qsxmPtbk6spZQcYlyDogfVpNm2XYOslH/ULS4VEJGUqQX5u7ACQw==}
     dev: true
 
   /babel-helper-is-void-0/0.4.3:
-    resolution: {integrity: sha1-fZwBtFYee5Xb2g9u7kj1tg5nMT4=}
+    resolution: {integrity: sha512-07rBV0xPRM3TM5NVJEOQEkECX3qnHDjaIbFvWYPv+T1ajpUiVLiqTfC+MmiZxY5KOL/Ec08vJdJD9kZiP9UkUg==}
     dev: true
 
   /babel-helper-mark-eval-scopes/0.4.3:
-    resolution: {integrity: sha1-0kSjvvmESHJgP/tG4izorN9VFWI=}
+    resolution: {integrity: sha512-+d/mXPP33bhgHkdVOiPkmYoeXJ+rXRWi7OdhwpyseIqOS8CmzHQXHUp/+/Qr8baXsT0kjGpMHHofHs6C3cskdA==}
     dev: true
 
   /babel-helper-remove-or-void/0.4.3:
-    resolution: {integrity: sha1-pPA7QAd6D/6I5F0HAQ3uJB/1rmA=}
+    resolution: {integrity: sha512-eYNceYtcGKpifHDir62gHJadVXdg9fAhuZEXiRQnJJ4Yi4oUTpqpNY//1pM4nVyjjDMPYaC2xSf0I+9IqVzwdA==}
     dev: true
 
   /babel-helper-to-multiple-sequence-expressions/0.5.0:
@@ -1277,7 +1286,7 @@ packages:
     dev: true
 
   /babel-plugin-minify-flip-comparisons/0.4.3:
-    resolution: {integrity: sha1-AMqHDLjxO0XAOLPB68DyJyk8llo=}
+    resolution: {integrity: sha512-8hNwgLVeJzpeLVOVArag2DfTkbKodzOHU7+gAZ8mGBFGPQHK6uXVpg3jh5I/F6gfi5Q5usWU2OKcstn1YbAV7A==}
     dependencies:
       babel-helper-is-void-0: 0.4.3
     dev: true
@@ -1290,7 +1299,7 @@ packages:
     dev: true
 
   /babel-plugin-minify-infinity/0.4.3:
-    resolution: {integrity: sha1-37h2obCKBldjhO8/kuZTumB7Oco=}
+    resolution: {integrity: sha512-X0ictxCk8y+NvIf+bZ1HJPbVZKMlPku3lgYxPmIp62Dp8wdtbMLSekczty3MzvUOlrk5xzWYpBpQprXUjDRyMA==}
     dev: true
 
   /babel-plugin-minify-mangle-names/0.5.0:
@@ -1300,7 +1309,7 @@ packages:
     dev: true
 
   /babel-plugin-minify-numeric-literals/0.4.3:
-    resolution: {integrity: sha1-jk/VYcefeAEob/YOjF/Z3u6TwLw=}
+    resolution: {integrity: sha512-5D54hvs9YVuCknfWywq0eaYDt7qYxlNwCqW9Ipm/kYeS9gYhJd0Rr/Pm2WhHKJ8DC6aIlDdqSBODSthabLSX3A==}
     dev: true
 
   /babel-plugin-minify-replace/0.5.0:
@@ -1317,7 +1326,7 @@ packages:
     dev: true
 
   /babel-plugin-minify-type-constructors/0.4.3:
-    resolution: {integrity: sha1-G8bxW4f3qxCF1CszC3F2V6IVZQA=}
+    resolution: {integrity: sha512-4ADB0irJ/6BeXWHubjCJmrPbzhxDgjphBMjIjxCc25n4NGJ00NsYqwYt+F/OvE9RXx8KaSW7cJvp+iZX436tnQ==}
     dependencies:
       babel-helper-is-void-0: 0.4.3
     dev: true
@@ -1359,37 +1368,37 @@ packages:
     dev: true
 
   /babel-plugin-transform-inline-consecutive-adds/0.4.3:
-    resolution: {integrity: sha1-Mj1Ho+pjqDp6w8gRro5pQfrysNE=}
+    resolution: {integrity: sha512-8D104wbzzI5RlxeVPYeQb9QsUyepiH1rAO5hpPpQ6NPRgQLpIVwkS/Nbx944pm4K8Z+rx7CgjPsFACz/VCBN0Q==}
     dev: true
 
   /babel-plugin-transform-member-expression-literals/6.9.4:
-    resolution: {integrity: sha1-NwOcmgwzE6OUlfqsL/OmtbnQOL8=}
+    resolution: {integrity: sha512-Xq9/Rarpj+bjOZSl1nBbZYETsNEDDJSrb6Plb1sS3/36FukWFLLRysgecva5KZECjUJTrJoQqjJgtWToaflk5Q==}
     dev: true
 
   /babel-plugin-transform-merge-sibling-variables/6.9.4:
-    resolution: {integrity: sha1-hbQi/DN3tEnJ0c3kQIcgNTJAHa4=}
+    resolution: {integrity: sha512-FDI9c4jqyYvl0pF8J0pE6xl5Ot235glDIc5mRfTH2nQ1qH/aNW45UZcAwVykD4OICRrgir6+7eQV7PPaLqsXsA==}
     dev: true
 
   /babel-plugin-transform-minify-booleans/6.9.4:
-    resolution: {integrity: sha1-rLs+VqNVXdI5KOS1gtKFFi3SsZg=}
+    resolution: {integrity: sha512-9pW9ePng6DZpzGPalcrULuhSCcauGAbn8AeU3bE34HcDkGm8Ldt0ysjGkyb64f0K3T5ilV4mriayOVv5fg0ASA==}
     dev: true
 
   /babel-plugin-transform-property-literals/6.9.4:
-    resolution: {integrity: sha1-mMHSHiVXNlc/k+zlRFn2ziSYXTk=}
+    resolution: {integrity: sha512-Pf8JHTjTPxecqVyL6KSwD/hxGpoTZjiEgV7nCx0KFQsJYM0nuuoCajbg09KRmZWeZbJ5NGTySABYv8b/hY1eEA==}
     dependencies:
       esutils: 2.0.3
     dev: true
 
   /babel-plugin-transform-regexp-constructors/0.4.3:
-    resolution: {integrity: sha1-WLd3W2OvzzMyj66aX4j71PsLSWU=}
+    resolution: {integrity: sha512-JjymDyEyRNhAoNFp09y/xGwYVYzT2nWTGrBrWaL6eCg2m+B24qH2jR0AA8V8GzKJTgC8NW6joJmc6nabvWBD/g==}
     dev: true
 
   /babel-plugin-transform-remove-console/6.9.4:
-    resolution: {integrity: sha1-uYA2DAZzhOJLNXpYjYB9PINSd4A=}
+    resolution: {integrity: sha512-88blrUrMX3SPiGkT1GnvVY8E/7A+k6oj3MNvUtTIxJflFzXTw1bHkuJ/y039ouhFMp2prRn5cQGzokViYi1dsg==}
     dev: true
 
   /babel-plugin-transform-remove-debugger/6.9.4:
-    resolution: {integrity: sha1-QrcnYxyXl44estGZp67IShgznvI=}
+    resolution: {integrity: sha512-Kd+eTBYlXfwoFzisburVwrngsrz4xh9I0ppoJnU/qlLysxVBRgI4Pj+dk3X8F5tDiehp3hhP8oarRMT9v2Z3lw==}
     dev: true
 
   /babel-plugin-transform-remove-undefined/0.5.0:
@@ -1399,11 +1408,11 @@ packages:
     dev: true
 
   /babel-plugin-transform-simplify-comparison-operators/6.9.4:
-    resolution: {integrity: sha1-9ir+CWyrDh9ootdT/fKDiIRxzrk=}
+    resolution: {integrity: sha512-GLInxhGAQWJ9YIdjwF6dAFlmh4U+kN8pL6Big7nkDzHoZcaDQOtBm28atEhQJq6m9GpAovbiGEShKqXv4BSp0A==}
     dev: true
 
   /babel-plugin-transform-undefined-to-void/6.9.4:
-    resolution: {integrity: sha1-viQcqBQEAwZ4t0hxcyK4nQyP4oA=}
+    resolution: {integrity: sha512-D2UbwxawEY1xVc9svYAUZQM2xarwSNXue2qDIx6CeV2EuMGaes/0su78zlIDIAgE7BvnMw4UpmSo9fDy+znghg==}
     dev: true
 
   /babel-preset-minify/0.5.1:
@@ -1533,7 +1542,7 @@ packages:
     dev: true
 
   /color-name/1.1.3:
-    resolution: {integrity: sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=}
+    resolution: {integrity: sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==}
     dev: true
 
   /color-name/1.1.4:
@@ -1576,7 +1585,7 @@ packages:
     dev: true
 
   /css-b64-images/0.2.5:
-    resolution: {integrity: sha1-QgBdgyBLK0pdk7axpWRBM7WSegI=}
+    resolution: {integrity: sha512-TgQBEdP07adhrDfXvI5o6bHGukKBNMzp2Ngckc/6d09zpjD2gc1Hl3Ca1CKgb8FXjHi88+Phv2Uegs2kTL4zjg==}
     hasBin: true
     dev: true
 
@@ -1638,7 +1647,7 @@ packages:
     dev: true
 
   /escape-string-regexp/1.0.5:
-    resolution: {integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=}
+    resolution: {integrity: sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==}
     engines: {node: '>=0.8.0'}
     dev: true
 
@@ -1808,7 +1817,7 @@ packages:
     dev: true
 
   /fs.realpath/1.0.0:
-    resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
+    resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
   /function-bind/1.1.1:
@@ -1867,7 +1876,7 @@ packages:
     dev: true
 
   /has-flag/3.0.0:
-    resolution: {integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=}
+    resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
     engines: {node: '>=4'}
     dev: true
 
@@ -1926,7 +1935,7 @@ packages:
     dev: true
 
   /inflight/1.0.6:
-    resolution: {integrity: sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk=}
+    resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
@@ -2005,7 +2014,7 @@ packages:
     dev: true
 
   /jsesc/0.5.0:
-    resolution: {integrity: sha1-597mbjXW/Bb3EP6R1c9p9w8IkR0=}
+    resolution: {integrity: sha512-uZz5UnB7u4T9LvwmFqXii7pZSouaRPorGs5who1Ip7VO0wxanFvBL7GkM6dTHlgX+jhBApRetaWpnDabOeTcnA==}
     hasBin: true
     dev: true
 
@@ -2060,7 +2069,7 @@ packages:
     dev: true
 
   /lodash.debounce/4.0.8:
-    resolution: {integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=}
+    resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: true
 
   /lodash.merge/4.6.2:
@@ -2179,7 +2188,7 @@ packages:
     dev: true
 
   /once/1.4.0:
-    resolution: {integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=}
+    resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
     dependencies:
       wrappy: 1.0.2
     dev: true
@@ -2196,8 +2205,8 @@ packages:
       word-wrap: 1.2.3
     dev: true
 
-  /overlayscrollbars/1.13.1:
-    resolution: {integrity: sha512-gIQfzgGgu1wy80EB4/6DaJGHMEGmizq27xHIESrzXq0Y/J0Ay1P3DWk6tuVmEPIZH15zaBlxeEJOqdJKmowHCQ==}
+  /overlayscrollbars/2.0.1:
+    resolution: {integrity: sha512-tER9iKasFqcJiYdtspHbzlhJJg8kicyj/Oag/GRAK658rDouat2BGFfSFg3AgIw/Yc9CQ78AuX6ieHgg1wQw7Q==}
     dev: true
 
   /param-case/3.0.4:
@@ -2222,7 +2231,7 @@ packages:
     dev: true
 
   /path-is-absolute/1.0.1:
-    resolution: {integrity: sha1-F0uSaHNVNP+8es5r9TpanhtcX18=}
+    resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -2304,7 +2313,7 @@ packages:
     dev: true
 
   /relateurl/0.2.7:
-    resolution: {integrity: sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=}
+    resolution: {integrity: sha512-G08Dxvm4iDN3MLM0EsP62EDV9IuhXPR6blNz6Utcp7zyV3tr4HVNINt6MpaRWbxoOHT3Q7YN2P+jaHX8vUbgog==}
     engines: {node: '>= 0.10'}
     dev: true
 
@@ -2375,7 +2384,7 @@ packages:
     dev: true
 
   /source-map/0.5.7:
-    resolution: {integrity: sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=}
+    resolution: {integrity: sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -2432,6 +2441,7 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
+      acorn: 8.5.0
       commander: 2.20.3
       source-map: 0.6.1
       source-map-support: 0.5.20
@@ -2442,6 +2452,7 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
+      acorn: 8.5.0
       commander: 2.20.3
       source-map: 0.7.3
       source-map-support: 0.5.20
@@ -2452,7 +2463,7 @@ packages:
     dev: true
 
   /to-fast-properties/2.0.0:
-    resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=}
+    resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
     dev: true
 
@@ -2537,7 +2548,7 @@ packages:
     dev: true
 
   /wrappy/1.0.2:
-    resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=}
+    resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
   /xmlcreate/2.0.4:
@@ -2548,19 +2559,20 @@ packages:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
     dev: true
 
-  github.com/rdipardo/clean-jsdoc-theme/9875e4b0e413e511d9998d07a9d3943ac499e530:
-    resolution: {tarball: https://codeload.github.com/rdipardo/clean-jsdoc-theme/tar.gz/9875e4b0e413e511d9998d07a9d3943ac499e530}
+  github.com/rdipardo/clean-jsdoc-theme/e3ac25e0f7dcd144d0f01a5ef1f272165ad5b609:
+    resolution: {tarball: https://codeload.github.com/rdipardo/clean-jsdoc-theme/tar.gz/e3ac25e0f7dcd144d0f01a5ef1f272165ad5b609}
     name: '@rdipardo/clean-jsdoc'
-    version: 4.1.1
+    version: 4.4.0
     engines: {npm: '>=7.0.0'}
     dependencies:
       '@babel/core': 7.16.0
       '@babel/preset-env': 7.16.0_@babel+core@7.16.0
+      '@jsdoc/salty': 0.2.1
       babel-preset-minify: 0.5.1
       fs-extra: 9.1.0
       glob: 7.2.0
       minify: 6.0.1
-      overlayscrollbars: 1.13.1
+      overlayscrollbars: 2.0.1
     transitivePeerDependencies:
       - supports-color
     dev: true

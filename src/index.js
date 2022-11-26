@@ -1,134 +1,72 @@
 /**
- * @module @eartharoid/christmas
+ * @module eartharoid/christmas
  * @author Isaac Saunders <contact@eartharoid.me>
  * @license MIT
  */
 
 const spacetime = require('spacetime');
 
-const one_day = 24 * 3600;
-const one_hour = 3600;
-const one_minute = 60;
+// convert a spacetime object to a Date
+const d = spacetime => new Date(spacetime.format('iso'));
 
-/**
- * @private
- * @param {string} [timezone]
- * @returns {spacetime.Spacetime}
- */
-const christmas = timezone => {
-	const now = spacetime.now(timezone);
+const now = tz => spacetime.now(tz);
+
+const christmas = tz => {
+	const now = spacetime.now(tz);
 	let year = now.year();
-	if (now.month() === 11 && now.date() > 24) year++; // if it's already Christmas, set date to next Christmas (months start at 0, because why not?)
-	return spacetime(`December 25, ${year} 0:00:00`, timezone);
+	// if it's already Christmas, set date to next Christmas (months start at 0, because why not?)
+	if (now.month() === 11 && now.date() > 24) year++;
+	return spacetime(`December 25, ${year} 0:00:00`, tz);
 };
 
-/**
- * @private
- * @param {string} period
- * @param {string} [timezone]
- * @returns {number}
- */
-const get = (period, timezone) => {
-	const now = spacetime.now(timezone);
-	return now.diff(christmas(timezone), period);
-};
+let ms = [ // [name, multiplier]
+	['second', 1000],
+	['minute', 60],
+	['hour', 60],
+	['day', 24],
+	['sleep', 1],
+	['week', 7]
+];
+ms.forEach(([k, v], i) => { // do maths
+	if (i > 0) ms[i] = [k, v * ms[i - 1][1]];
+});
+ms = ms.reduce((o, [k, v]) => { // convert to object
+	o[k] = v;
+	return o;
+}, {});
+// `month` & `year` are multiplied by a day, not the next smallest value
+ms.month = 30.5 * ms.day;
+ms.year = 365.25 * ms.day;
 
-/**
- * Get the number of seconds left until Christmas
- * @param {string} [timezone] The timezone name
- * @returns {number} The number of seconds left (rounded down)
- */
-module.exports.getSeconds = timezone => get('seconds', timezone);
+class Christmas {}
 
-/**
- * Get the number of minutes left until Christmas
- * @param {string} [timezone] The timezone name
- * @returns {number} The number of minutes left (rounded down)
- */
-module.exports.getMinutes = timezone => get('minutes', timezone);
+// getSeconds - getMonths
+Object.entries(ms)
+	.forEach(([k, v]) => {
+		const f = `get${k[0].toUpperCase() + k.slice(1)}s`;
+		const maybeCeil = n => k === 'sleep' ? Math.ceil(n) : n;
+		Christmas[f] = tz => maybeCeil((d(christmas(tz)) - d(now(tz))) / v);
+	});
 
-/**
- * Get the number of hours left until Christmas
- * @param {string} [timezone] The timezone name
- * @returns {number} The number of hours left (rounded down)
- */
-module.exports.getHours = timezone => get('hours', timezone);
 
-/**
- * Get the number of days left until Christmas
- * @param {string} [timezone] The timezone name
- * @returns {number} The number of days left (rounded down)
- */
-module.exports.getDays = timezone => get('days', timezone);
-
-/**
- * Get the number of sleeps left until Christmas
- * @param {string} [timezone] The timezone name
- * @returns {number} The number of days left (rounded up)
- */
-module.exports.getSleeps = timezone => module.exports.getDays(timezone) + 1;
-
-/**
- * Get the number of weeks left until Christmas
- * @param {string} [timezone] The timezone name
- * @returns {number} The number of weeks left (rounded down)
- */
-module.exports.getWeeks = timezone => get('weeks', timezone);
-
-/**
- * Get the number of months left until Christmas
- * @param {string} [timezone] The timezone name
- * @returns {number} The number of months left (rounded down)
- */
-module.exports.getMonths = timezone => get('months', timezone);
-
-/**
- * @typedef Total
- * @property {number} days
- * @property {number} hours
- * @property {number} minutes
- * @property {number} seconds
- */
-
-/**
- * Get the total time left until Christmas
- * @param {string} [timezone] The timezone name
- * @returns {Total}
- */
-module.exports.getTotal = timezone => {
-	// christmas(timezone).since(now).diff
-	let diff = spacetime.now(timezone).diff(christmas(timezone), 'seconds');
+Christmas.getTotal = tz => {
+	let diff = d(christmas(tz)) - d(now());
 	return {
-		days: Math.floor(diff / one_day),
-		hours: Math.floor((diff %= one_day) / one_hour),
-		minutes: Math.floor((diff %= one_hour) / one_minute),
-		seconds: Math.floor(diff %= one_minute)
+		days: Math.floor(diff / ms.day),
+		hours: Math.floor((diff %= ms.day) / ms.hour),
+		minutes: Math.floor((diff %= ms.hour) / ms.minute),
+		seconds: Math.floor((diff %= ms.minute) / ms.second)
 	};
 };
 
-/**
- * Check if it is Christmas Day
- * @param {string} [timezone] The timezone name
- * @returns {boolean} Is it Christmas?
- */
-module.exports.isToday = timezone => {
-	const now = spacetime.now(timezone);
-	return now.isSame(spacetime(`December 25, ${now.year()} 0:00:00`, timezone), 'date'); // don't use christmas() as it could be next year
-};
+Christmas.getPercentage = tz =>  ((ms.year - (d(christmas(tz)) - d(now(tz)))) / ms.year) * 100;
 
-/**
- * Check if it is Christmas Eve
- * @param {string} [timezone] The timezone name
- * @returns {boolean} Is it Christmas Eve?
- */
-module.exports.isTomorrow = timezone => {
-	const now = spacetime.now(timezone);
-	return now.isSame(christmas(timezone).subtract(1, 'days'), 'date');
-};
+Christmas.getWeekday = (tz, locale) => new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(d(christmas(tz)));
 
-/**
- * Get a Date object representing Christmas Day
- * @param {string} [timezone] The timezone name
- * @returns {Date} Christmas
- */
-module.exports.date = timezone => new Date(christmas(timezone).format('iso'));
+Christmas.isToday = tz => now().isSame(spacetime(`December 25, ${now().year()} 0:00:00`, tz), 'date');
+
+Christmas.isTomorrow = tz => now().isSame(christmas(tz).subtract(1, 'days'), 'date');
+
+Christmas.date = tz => d(christmas(tz));
+
+module.exports = Christmas;
